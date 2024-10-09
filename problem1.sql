@@ -44,6 +44,25 @@ CREATE TABLE enrollments (
 );
 
 --Insert Data 
+INSERT INTO students (first_name, last_name, email, school_enrollment_date)
+VALUES 
+('Emily', 'Henderson', 'emily.henderson@example.com', '2024-09-04'),
+('Michael', 'Dawson', 'michael.dawson@example.com', '2023-09-05'),
+('Olivia', 'Bennett', 'olivia.bennett@example.com', '2024-09-04'),
+('James', 'Carter', 'james.carter@example.com', '2024-01-05'),
+('Sophia', 'Mitchell', 'sophia.mitchell@example.com', '2024-01-05')
+
+INSERT INTO professors (first_name, last_name, department)
+VALUES
+('Jason', 'Stone', 'Math'),
+('Sylvia', 'Fletcher', 'Psychology'),
+('Glen', 'Morris', 'Physics'),
+('Anna', 'Sloan', 'English')
+
+INSERT INTO courses (course_name, course_description)
+VALUES (),
+(),
+()
 
 --Retrieve full names of all students in Physics 101
 
