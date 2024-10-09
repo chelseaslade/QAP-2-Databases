@@ -67,21 +67,33 @@ VALUES
 INSERT INTO enrollments (student_id, course_id, enrollment_date)
 VALUES
 (1, 1, '2024-09-04'),
-(2, 1, '2024-09,04'),
-(3, 3, '2024-09,04'),
+(2, 1, '2024-09-04'),
+(3, 3, '2024-09-04'),
 (4, 2, '2024-09-04'),
 (5, 3, '2024-09-04');
 
 --Retrieve full names of all students in Physics 101
 SELECT first_name || ' ' || last_name as full_name
-FROM students;
+FROM enrollments
+JOIN students ON enrollments.student_id = id
+WHERE course_id = 3;
 
 --Retrieve list of all courses + full prof name of respective teacher
-SELECT course_name FROM courses
-INNER JOIN ;
+SELECT course_name, professors.first_name || ' ' || professors.last_name AS professor_full_name
+FROM courses
+JOIN professors ON courses.professor_id = professors.id;
 
 --Retrieve all courses that have students enrolled
+SELECT DISTINCT course_name
+FROM courses
+JOIN enrollments ON enrollments.course_id = course_id;
 
 --Update Student Email
+UPDATE students
+SET email = 'sillyupdate@example.com'
+WHERE id = 1;
 
 --Remove a Student from Course
+DELETE
+FROM enrollments
+WHERE student_id = 1 AND course_id = 1;
