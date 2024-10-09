@@ -6,31 +6,30 @@
 --Create Tables
 --Students
 CREATE TABLE students (
-    id int NOT NULL AUTO_INCREMENT,
+    id serial NOT NULL PRIMARY KEY,
     first_name varchar(100),
     last_name varchar(100),
     email varchar (150),
-    school_enrollment_date DATE
-    PRIMARY KEY (id)
+    school_enrollment_date DATE,
+    UNIQUE (id)
 );
 
 --Professors
 CREATE TABLE professors (
-    id int NOT NULL AUTO_INCREMENT,
+    id serial NOT NULL PRIMARY KEY,
     first_name varchar(100),
     last_name varchar(100),
     department varchar(100)
-    PRIMARY KEY (id)
 );
 
 --Courses
 CREATE TABLE courses (
-    id int NOT NULL AUTO_INCREMENT,
+    id serial NOT NULL PRIMARY KEY,
     course_name varchar(100),
     course_description varchar(300),
     professor_id int,
-    PRIMARY KEY (id),
-    FOREIGN KEY (professor_id) REFERENCES professors(id)
+    FOREIGN KEY (professor_id) REFERENCES professors(id),
+    UNIQUE (id)
 );
 
 --Enrollments
@@ -74,8 +73,12 @@ VALUES
 (5, 3, '2024-09-04');
 
 --Retrieve full names of all students in Physics 101
+SELECT first_name || ' ' || last_name as full_name
+FROM students;
 
 --Retrieve list of all courses + full prof name of respective teacher
+SELECT course_name FROM courses
+INNER JOIN ;
 
 --Retrieve all courses that have students enrolled
 
