@@ -5,6 +5,13 @@
 
 --Create Tables
 --Students
+CREATE TABLE students (
+    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    first_name varchar(100),
+    last_name varchar(100),
+    email varchar (150),
+    school_enrollment_date DATE
+);
 
 --Professors
 
