@@ -50,19 +50,28 @@ VALUES
 ('Michael', 'Dawson', 'michael.dawson@example.com', '2023-09-05'),
 ('Olivia', 'Bennett', 'olivia.bennett@example.com', '2024-09-04'),
 ('James', 'Carter', 'james.carter@example.com', '2024-01-05'),
-('Sophia', 'Mitchell', 'sophia.mitchell@example.com', '2024-01-05')
+('Sophia', 'Mitchell', 'sophia.mitchell@example.com', '2024-01-05');
 
 INSERT INTO professors (first_name, last_name, department)
 VALUES
 ('Jason', 'Stone', 'Math'),
 ('Sylvia', 'Fletcher', 'Psychology'),
 ('Glen', 'Morris', 'Physics'),
-('Anna', 'Sloan', 'English')
+('Anna', 'Sloan', 'English');
 
-INSERT INTO courses (course_name, course_description)
-VALUES (),
-(),
-()
+INSERT INTO courses (course_name, course_description, professor_id)
+VALUES 
+('Math 101', 'Introductory Algebra', 1),
+('Psychology 101', 'Introductory Psychology', 2),
+('Physics 101', 'Introductory Physics', 3);
+
+INSERT INTO enrollments (student_id, course_id, enrollment_date)
+VALUES
+(1, 1, '2024-09-04'),
+(2, 1, '2024-09,04'),
+(3, 3, '2024-09,04'),
+(4, 2, '2024-09-04'),
+(5, 3, '2024-09-04');
 
 --Retrieve full names of all students in Physics 101
 
