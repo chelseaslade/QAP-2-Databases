@@ -99,5 +99,10 @@ WHERE products.id = order_items.product_id
 AND order_id = 4;
 
 --Remove an order and associated order items from system
-DELETE FROM orders
+--Delete order items values first
+DELETE FROM order_items
+WHERE order_id = 4;
+
+--Delete from orders second
+DELETE FROM orders 
 WHERE id = 4;
